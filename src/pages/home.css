@@ -1,0 +1,14 @@
+.principale {
+    background-image: url(http://getwallpapers.com/wallpaper/full/9/0/1/870316-video-game-backgrounds-1920x1080-for-xiaomi.jpg);
+    background-attachment: fixed;
+    background-position-y: -200px;
+    background-position-x: center;
+    background-size: cover;
+    height: 30em;
+    width: 100%;   
+}
+
+.titolo {
+    color: white;
+    padding-top: 15em;
+}

@@ -11,7 +11,7 @@ import './login.css'
 const Login = () => {
     const [loginData, setLoginData] = useState({})
     const [login, setLogin] = useState(null)
-   
+
     const navigate = useNavigate()
 
     const handleInputChange = (e) => {
@@ -53,13 +53,14 @@ const Login = () => {
 
     return (
         <>
-            <div className="ctn-form">
-            <Form noValidate onSubmit={onSubmit}>
-                <Container className="mb-3 d-flex flex-column align-items-center">
-                <h1 className="mb-5">L'OASI DEL GIOCATORE</h1>
+            <div className="ctn-form lgn">
+                <Form noValidate onSubmit={onSubmit}>
+                    <Container className="mb-3 d-flex flex-column align-items-center">
+                        <h1 className="mb-5">L'OASI DEL GIOCATORE</h1>
                         <Form.Group as={Col} md="4" className="mt-5">
                             <Form.Label>E-Mail</Form.Label>
                             <Form.Control
+                                className="frm"
                                 required
                                 type="text"
                                 name="email"
@@ -70,6 +71,7 @@ const Login = () => {
                         <Form.Group as={Col} md="4" className="mt-3">
                             <Form.Label>Password</Form.Label>
                             <Form.Control
+                                className="frm"
                                 required
                                 type="password"
                                 name="password"
@@ -77,10 +79,10 @@ const Login = () => {
                                 onChange={handleInputChange}
                             />
                         </Form.Group>
-                    <Button type="submit" className="mt-5">LOGIN</Button>
-                    <Button type="button" className="mt-5 text-grey bg-transparent border-light border-0 text-decoration-underline" onClick={() => signIn()}>Non sei ancora registrato?</Button>
-                </Container>
-            </Form>
+                        <button type="submit" className="mt-5 glow-on-hover frm">LOGIN</button>
+                        <Button type="button" className="mt-5 text-grey bg-transparent border-light border-0 text-decoration-underline" onClick={() => signIn()}>Non sei ancora registrato?</Button>
+                    </Container>
+                </Form>
             </div>
             <MyFooter />
         </>

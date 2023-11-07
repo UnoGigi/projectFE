@@ -68,17 +68,18 @@ const Registrati = () => {
 
     return (
         <div className="ctn-form">
-            <Container className="pt-5 d-flex flex-column align-items-center text-white">
-                <h1 className="mb-5">L'OASI DEL GIOCATORE</h1>
+            <Container className="pt-3 pb-5 d-flex flex-column align-items-center text-white">
+                <h1 className="mb-3">L'OASI DEL GIOCATORE</h1>
                 <Form
                     onSubmit={onSubmit}
                     encType="multipart/form-data"
-                    className="d-flex flex-column align-items-center"
+                    className="d-flex flex-column align-items-center w-50"
                 >
                     <Row className="mb-3">
-                        <Form.Group md="4" className="mt-2">
+                        <Form.Group md="4" className="mt-3">
                             <Form.Label>Username</Form.Label>
                             <Form.Control
+                                className="frm"
                                 required
                                 type="text"
                                 name="username"
@@ -88,9 +89,10 @@ const Registrati = () => {
                                 })}
                             />
                         </Form.Group>
-                        <Form.Group md="4" className="mt-2">
+                        <Form.Group md="4" className="mt-3">
                             <Form.Label>Nome</Form.Label>
                             <Form.Control
+                                className="frm"
                                 required
                                 type="text"
                                 name="nome"
@@ -100,9 +102,10 @@ const Registrati = () => {
                                 })}
                             />
                         </Form.Group>
-                        <Form.Group md="4" className="mt-2">
+                        <Form.Group md="4" className="mt-3">
                             <Form.Label>Cognome</Form.Label>
                             <Form.Control
+                                className="frm"
                                 required
                                 type="text"
                                 name="cognome"
@@ -112,9 +115,10 @@ const Registrati = () => {
                                 })}
                             />
                         </Form.Group>
-                        <Form.Group md="4" className="mt-2">
+                        <Form.Group md="4" className="mt-3">
                             <Form.Label>E-Mail</Form.Label>
                             <Form.Control
+                                className="frm"
                                 required
                                 type="text"
                                 name="email"
@@ -125,9 +129,10 @@ const Registrati = () => {
                             />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group md="4" className="mt-2">
-                            <Form.Label>password</Form.Label>
+                        <Form.Group md="4" className="mt-3">
+                            <Form.Label>Password</Form.Label>
                             <Form.Control
+                                className="frm"
                                 required
                                 type="password"
                                 name="password"
@@ -137,9 +142,10 @@ const Registrati = () => {
                                 })}
                             />
                         </Form.Group>
-                        <Form.Group md="4" className="mt-2">
+                        <Form.Group md="4" className="mt-3">
                             <Form.Label>Indirizzo</Form.Label>
                             <Form.Control
+                                className="frm"
                                 type="text"
                                 name="indirizzo"
                                 required
@@ -149,9 +155,10 @@ const Registrati = () => {
                                 })}
                             />
                         </Form.Group>
-                        <Form.Group md="4" className="mt-2">
+                        <Form.Group md="4" className="mt-3">
                             <Form.Label>Telefono</Form.Label>
                             <Form.Control
+                                className="frm"
                                 type="number"
                                 name="telefono"
                                 required
@@ -161,17 +168,18 @@ const Registrati = () => {
                                 })}
                             />
                         </Form.Group>
-                        <Form.Group md="4" className="mt-2">
+                        <Form.Group md="4" className="mt-3">
                             <Form.Label>Immagine Profilo</Form.Label>
                             <Form.Control
+                                className="frm"
                                 type="file"
                                 name="imgprofilo"
                                 onChange={onChangeFile}
                             />
                         </Form.Group>
                     </Row>
-                    <Button type="submit" className="mt-3">Registrati</Button>
-                    <Button onClick={() => tornaLogin()} className="mt-4">Trona alla Login</Button>
+                    <button type="submit" className="glow-on-hover mt-3 frm">Registrati</button>
+                    <button onClick={() => tornaLogin()} className="glow-on-hover mt-4 frm">Trona alla Login</button>
                 </Form>
             </Container>
         </div>

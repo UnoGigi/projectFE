@@ -1,15 +1,9 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './SingleProduct.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function SingleProduct({ nome, category, prezzo, cover1, description }) {
-
-  const navigate = useNavigate
-
-  const goDetails = (productId) => {
-    navigate(`/dettagli/${productId}`)
-  }
+function SingleProduct({ nome, category, prezzo, cover1, description, _id }) {
 
 
   return (
@@ -25,7 +19,9 @@ function SingleProduct({ nome, category, prezzo, cover1, description }) {
         <ListGroup.Item>{category}</ListGroup.Item>
         <ListGroup.Item>{prezzo}$</ListGroup.Item>
       </ListGroup>
-      <button onClick={goDetails()} className='glow-on-hover mt-2 d-flex justify-content-center align-self-center align-items-center'>Dettagli</button>
+      <Link to={`/products/${_id}`} className='text-decoration-none mt-3 mb-2 d-flex justify-content-center align-self-center align-items-center'><button className='glow-on-hover'>
+         Dettagli
+        </button></Link>
     </Card>
   );
 }

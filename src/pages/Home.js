@@ -76,6 +76,7 @@ const Home = () => {
                             description={product1.description}
                             category={product1.category}
                             prezzo={product1.prezzo}
+                            _id={product1._id}
                         />
                     </Col>
                     <Col  lg="6" md="6" sm="12" className='d-flex justify-content-center align-self-center'>
@@ -85,6 +86,7 @@ const Home = () => {
                             description={product2.description}
                             category={product2.category}
                             prezzo={product2.prezzo}
+                            _id={product2._id}
                         />
                     </Col>
                 </Row>

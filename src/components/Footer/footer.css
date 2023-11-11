@@ -1,0 +1,31 @@
+.footer {
+    background-color: #5A5A5A;
+}
+
+.ion-icon {
+    color: white;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.ftrrow {
+    margin-left: 36px;
+}
+
+.ftrrow a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+}
+
+.ftrbtn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #5A5A5A;
+    width: 125px;
+}
+
+.cpy p {
+    font-size: 13px;
+    color: white;
+}

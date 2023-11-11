@@ -15,9 +15,8 @@ const Home = () => {
 
     const [product1, setProduct1] = useState({})
     const [product2, setProduct2] = useState({})
-    console.log("prodotto1", product1);
-    console.log("prodotto2", product2);
-
+    const [product3, setProduct3] = useState({})
+    
     const getProduct1 = async () => {
         try {
             const response = await axios.get(`${process.env.REACT_APP_URL}/products/65490012c24820fa8c95effa`)
@@ -35,9 +34,18 @@ const Home = () => {
             console.log(error);
         }
     }
+    const getProduct3 = async () => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_URL}/products/654e6361d48b57407a2d2d43`)
+            setProduct3(response.data.product)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 
     useEffect(() => {
-        getProduct1(); getProduct2()
+        getProduct1(); getProduct2(); getProduct3()
     }, [])
 
 
@@ -69,24 +77,31 @@ const Home = () => {
                 </Row> 
                 <Row className='pb-5 pt-5'>
                     <h2 className='d-flex justify-content-center align-self-center text-light'>PRODOTTI IN EVIDENZA</h2>
-                    <Col  lg="6" md="6" sm="12" className='d-flex justify-content-center align-self-center'>
+                    <Col  xxl="4" xl="4" lg="4" md="6" sm="12" className='d-flex justify-content-center align-self-center'>
                         <SingleProduct
                             cover1={product1.cover1}
                             nome={product1.nome}
-                            description={product1.description}
                             category={product1.category}
                             prezzo={product1.prezzo}
                             _id={product1._id}
                         />
                     </Col>
-                    <Col  lg="6" md="6" sm="12" className='d-flex justify-content-center align-self-center'>
+                    <Col  xxl="4" xl="4" lg="4" md="6" sm="12" className='d-flex justify-content-center align-self-center'>
                     <SingleProduct
                             cover1={product2.cover1}
                             nome={product2.nome}
-                            description={product2.description}
                             category={product2.category}
                             prezzo={product2.prezzo}
                             _id={product2._id}
+                        />
+                    </Col>
+                    <Col xxl="4" xl="4" lg="4" md="6" sm="12" className='d-flex justify-content-center align-self-center'>
+                    <SingleProduct
+                            cover1={product3.cover1}
+                            nome={product3.nome}
+                            category={product3.category}
+                            prezzo={product3.prezzo}
+                            _id={product3._id}
                         />
                     </Col>
                 </Row>

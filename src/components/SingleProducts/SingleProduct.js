@@ -3,7 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import './SingleProduct.css'
 import { Link } from 'react-router-dom';
 
-function SingleProduct({ nome, category, prezzo, cover1, description, _id }) {
+function SingleProduct({ nome, category, prezzo, cover1, _id }) {
 
 
   return (
@@ -11,9 +11,6 @@ function SingleProduct({ nome, category, prezzo, cover1, description, _id }) {
       <Card.Img variant="top" src={cover1} className='cardimg'/>
       <Card.Body>
         <Card.Title>{nome}</Card.Title>
-        <Card.Text>
-          {description}
-        </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>{category}</ListGroup.Item>

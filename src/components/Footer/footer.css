@@ -1,9 +1,9 @@
-.footer {
-    background-color: #5A5A5A;
+footer {
+    border-top: 1px solid black;
 }
 
 .ion-icon {
-    color: white;
+    color: black;
     font-size: 25px;
     margin-right: 10px;
 }
@@ -14,14 +14,14 @@
 
 .ftrrow a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 13px;
 }
 
 .ftrbtn {
     background-color: transparent;
-    color: white;
-    border: 1px solid #5A5A5A;
+    color: black;
+    border-top: 1px solid black;
     width: 125px;
 }
 

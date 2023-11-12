@@ -7,46 +7,26 @@ import Row from "react-bootstrap/esm/Row";
 import axios from "axios";
 import SingleProduct from "../components/SingleProducts/SingleProduct";
 import { nanoid } from "nanoid"
-import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/esm/Col'
-import { CartContext } from "../CartContext";
+import Form from 'react-bootstrap/Form';
 
 
-const Prodotti = () => {
-    //prendo i dati dei prodotti
-    
+const Giochi = () => {
     const [product, setProduct] = useState([])
-    console.log(product);
-  
-
-    const cart = useContext(CartContext)
-    console.log(cart.items);
-
-
-    //imposto la barra per la ricerca
     const [formValue, setFormValue] = useState("")
     const [filteredProduct, setFilteredProduct] = useState(product)
-
 
 
     const getProduct = async () => {
         try {
             const response = await axios.get(`${process.env.REACT_APP_URL}/products`)
-            setProduct(response.data.products)
-            setFilteredProduct(response.data.products)
+            const data = response.data.products
+            setProduct(data.filter((data) => data.category.toLowerCase().includes("gioco")))
+            setFilteredProduct(data.filter((data) => data.category.toLowerCase().includes("gioco")))
         } catch (error) {
             console.log(error);
         }
     }
-
-    
-
-
-    useEffect(() => {
-        getProduct()
-    }, [])
-
-    
 
     const prendiDati = (value) => {
         if (value === "") {
@@ -55,7 +35,6 @@ const Prodotti = () => {
         setFormValue(value)
 
     }
-
 
     const filtraProdotti = (e) => {
         e.preventDefault()
@@ -67,6 +46,11 @@ const Prodotti = () => {
         setFilteredProduct(prodottiFiltrati)
     }
 
+    useEffect(() => {
+        getProduct()
+    }, [])
+
+
     return (
         <div className='sfondo2 sfondo'>
             <div className='sfondo'>
@@ -77,7 +61,6 @@ const Prodotti = () => {
                             <Form.Group className="d-flex" md="4">
                                 <Form.Control
                                     name="formValue"
-                                    placeholder="Cerca il nome del prodotto desiderato"
                                     type="text"
                                     onChange={(e) => prendiDati(e.target.value)}
                                 />
@@ -106,4 +89,4 @@ const Prodotti = () => {
     )
 }
 
-export default Prodotti
+export default Giochi

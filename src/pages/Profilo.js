@@ -40,7 +40,7 @@ const Profilo = () => {
         <div className='sfondo sfondo2'>
             <div className='sfondo'>
                 <Navbar />
-                <Container className="pt-3 pb-5 text-white">
+                <Container className="pt-3 pb-5">
                     <Row className="mb-3">
                         <Col lg="6" md="6" sm="12">
                             <h1 className="mb-3">I TUOI DATI PERSONALI</h1>

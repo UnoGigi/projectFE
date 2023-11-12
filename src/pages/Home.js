@@ -65,18 +65,18 @@ const Home = () => {
                         </div>
                     </Col>
                 </Row>
-               <Row className='mt-5 d-flex justify-content-center mb-5'>
-                    <Col lg="6" md="6" sm="12" className='text-white fs-4'>
-                        <p>L'Oasi del Giocatore nasce nel 2023 dalla passione di un ragazzo per i videogame e decide di portarla anche alle altre  persone.<br/>
-                        Da noi si organizzano eventi per tutti quelli che hanno la nostra stessa passione senza limiti di eta e sesso, oltre ad offrire un negozio online per qualsiasi tua richiesta!!
-                        </p>
-                    </Col>
-                    <Col lg="6" md="6" sm="12">
+               <Row className='mt-5 mb-5'>
+                    <Col className='d-flex justify-content-center'>
                         <img src='https://www.gamepare.it/wp-content/uploads/2015/08/gaming_cinema_1.jpg' className='imgSfondo'/>
                     </Col>
                 </Row> 
+                <Row className='mt-5 mb-5'>
+                    <Col className='d-flex justify-content-center'>
+                        <h2>Qui potrai trovare tutto quello che cerchi per il GAMING!!</h2>
+                    </Col>
+                </Row> 
                 <Row className='pb-5 pt-5'>
-                    <h2 className='d-flex justify-content-center align-self-center text-light'>PRODOTTI IN EVIDENZA</h2>
+                    <h2 className='d-flex justify-content-center align-self-center'>PRODOTTI IN EVIDENZA</h2>
                     <Col  xxl="4" xl="4" lg="4" md="6" sm="12" className='d-flex justify-content-center align-self-center'>
                         <SingleProduct
                             cover1={product1.cover1}
@@ -106,13 +106,13 @@ const Home = () => {
                     </Col>
                 </Row>
                 <Row className='pb-5 pt-5'>
-                    <Col lg="4" md="4" sm="12" className='d-flex justify-content-center align-self-center text-white'>
+                    <Col lg="4" md="4" sm="12" className='d-flex justify-content-center align-self-center text-white mt-2'>
                         <Link to={'/prodotti'}><button className='glow-on-hover'>PRODOTTI</button></Link>
                     </Col>
-                    <Col lg="4" md="4" sm="12" className='d-flex justify-content-center align-self-center'>
+                    <Col lg="4" md="4" sm="12" className='d-flex justify-content-center align-self-center mt-2'>
                         <Link to={'/carrello'}><button className='glow-on-hover'><CiShoppingCart className='fs-3'/></button></Link>
                     </Col>
-                    <Col lg="4" md="4" sm="12" className='d-flex justify-content-center align-self-center'>
+                    <Col lg="4" md="4" sm="12" className='d-flex justify-content-center align-self-center mt-2'>
                         <Link to={'/profilo'}><button className='glow-on-hover'>PROFILO</button></Link>
                     </Col>
                 </Row>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MyFooter from "../components/Footer/MyFooter";
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -84,7 +83,6 @@ const Login = () => {
                     </Container>
                 </Form>
             </div>
-            <MyFooter />
         </>
     )
 }

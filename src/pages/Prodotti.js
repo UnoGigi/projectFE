@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from '../components/Navbar/Nvb'
 import MyFooter from '../components/Footer/MyFooter'
 import "./home.css"
@@ -9,7 +9,7 @@ import SingleProduct from "../components/SingleProducts/SingleProduct";
 import { nanoid } from "nanoid"
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/esm/Col'
-import { CartContext } from "../CartContext";
+
 
 
 const Prodotti = () => {
@@ -17,10 +17,6 @@ const Prodotti = () => {
     
     const [product, setProduct] = useState([])
     console.log(product);
-  
-
-    const cart = useContext(CartContext)
-    console.log(cart.items);
 
 
     //imposto la barra per la ricerca

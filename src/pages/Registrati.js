@@ -4,10 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from "react-bootstrap/esm/Container";
 import './login.css'
+import Alert from 'react-bootstrap/Alert';
 
 const Registrati = () => {
     const [file, setFile] = useState(null)
     const [formData, setFormData] = useState({})
+    const [show, setShow] = useState(false);
+
     console.log(formData)
 
     const onChangeFile = (e) => {
@@ -29,7 +32,9 @@ const Registrati = () => {
         }
     }
 
-
+    const vediAlert = () => {
+        setShow(!show)
+    }
 
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -57,6 +62,7 @@ const Registrati = () => {
         } else {
             console.error("Inserisci un'immagine");
         }
+        alert("Registrazion effettuata con successo")
     }
 
     const navigate = useNavigate()
@@ -68,6 +74,9 @@ const Registrati = () => {
     return (
         <div className="ctn-form">
             <Container className="pt-3 pb-5 d-flex flex-column align-items-center text-white">
+                <Alert show={show} variant="success" dismissible className="mt-5 pt-5 h-25 position-absolute top-50 start-25 d-flex  align-items-center">
+                    <Alert.Heading className="fs-2">Registrazione Effettuata con Successo</Alert.Heading>
+                </Alert>
                 <h1 className="mb-3">L'OASI DEL GIOCATORE</h1>
                 <Form
                     onSubmit={onSubmit}
@@ -177,7 +186,7 @@ const Registrati = () => {
                             />
                         </Form.Group>
                     </Row>
-                    <button type="submit" className="glow-on-hover mt-3 frm">Registrati</button>
+                    <button type="submit" className="glow-on-hover mt-3 frm" onClick={() => vediAlert()}>Registrati</button>
                     <button onClick={() => tornaLogin()} className="glow-on-hover mt-4 frm">Trona alla Login</button>
                 </Form>
             </Container>

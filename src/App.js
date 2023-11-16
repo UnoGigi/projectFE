@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { createContext, useEffect, useState } from "react";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import LineaProtetta from "./middleware/LineaProtetta";
@@ -12,17 +13,20 @@ import Giochi from "./pages/Giochi";
 import Accessori from "./pages/Accessori";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
-import CartProvider from "./CartContext";
 import Nvb from "./components/Navbar/Nvb";
 
-
+export const CartContext = createContext({})
 
 
 function App() {
+
+  const [cartItems, setCartItems] = useState([])
+
+
   return (
-    <CartProvider>
+    <CartContext.Provider value={{cartItems, setCartItems}}>
       <BrowserRouter>
-        <Nvb className="d-none" />
+        <Nvb />
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route path="/registrati" element={<Registrati />} />
@@ -41,7 +45,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </CartProvider>
+    </CartContext.Provider>
   );
 }
 

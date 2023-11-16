@@ -21,6 +21,14 @@ function Nvb() {
         navigate('/console')
     }
 
+    const home = () => {
+        navigate('/home')
+    }
+
+    const profilo = () => {
+        navigate('/profilo')
+    }
+
     const giochi = () => {
         navigate('/giochi')
     }
@@ -41,7 +49,7 @@ function Nvb() {
 
         <Navbar expand="lg" className="bg-white fixed-top box1">
             <Container className=''>
-                <Navbar.Brand href="/home">L'OASI DEL GIOCATORE</Navbar.Brand>
+                <Navbar.Brand onClick={()=>home()} className='pointer'>L'OASI DEL GIOCATORE</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <NavDropdown title="Prodotti" id="basic-nav-dropdown">
@@ -55,7 +63,7 @@ function Nvb() {
                         <Nav.Link onClick={()=>carrello()} className='mx-1'><CiShoppingCart className='fs-4' /></Nav.Link>
                     </Nav>
                     <NavDropdown title="Profilo" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/profilo">I tuoi Dati</NavDropdown.Item>
+                        <NavDropdown.Item onClick={()=>profilo()}>I tuoi Dati</NavDropdown.Item>
                         <NavDropdown.Item href="/ordini">I tuoi Ordini</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item onClick={Logout}>

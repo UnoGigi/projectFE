@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Container from "react-bootstrap/esm/Container";
@@ -79,7 +78,7 @@ const Login = () => {
                             />
                         </Form.Group>
                         <button type="submit" className="mt-5 glow-on-hover frm">LOGIN</button>
-                        <Button type="button" className="mt-5 text-grey bg-transparent border-light border-0 text-decoration-underline" onClick={() => signIn()}>Non sei ancora registrato?</Button>
+                        <button type="button" className="mt-5 text-grey bg-transparent border-light border-0 text-decoration-underline" onClick={() => signIn()}>Non sei ancora registrato?</button>
                     </Container>
                 </Form>
             </div>

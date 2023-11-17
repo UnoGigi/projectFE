@@ -52,6 +52,7 @@ const Dettagli = () => {
                 }
             ]
         )
+        alert("prodotto aggiunto al carrello")
     }
 
 
@@ -63,9 +64,8 @@ const Dettagli = () => {
 
     return (
         <div>
-            <Navbar />
-            <Container className="pt-5">
-                <Row>
+            <Container className="pt-5 mt-5">
+                <Row className="mt-5">
                     <Col className="mt-5 pt-5 border-bottom border-grey">
                         {product &&
                             <h2>{product.nome}</h2>}

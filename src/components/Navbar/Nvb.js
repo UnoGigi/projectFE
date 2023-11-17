@@ -1,3 +1,4 @@
+import React from "react"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,8 +8,7 @@ import './Nvb.css'
 import { useNavigate } from "react-router-dom";
 
 
-
-function Nvb() {
+const Nvb = () => {
 
     const Logout = () => {
         localStorage.clear()
@@ -47,9 +47,9 @@ function Nvb() {
 
     return (
 
-        <Navbar expand="lg" className="bg-white fixed-top box1">
+        <Navbar expand="lg" className="bgnvb fixed-top box1 text-white">
             <Container className=''>
-                <Navbar.Brand onClick={()=>home()} className='pointer'>L'OASI DEL GIOCATORE</Navbar.Brand>
+                <Navbar.Brand onClick={()=>home()} className='pointer text-white'>L'OASI DEL GIOCATORE</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <NavDropdown title="Prodotti" id="basic-nav-dropdown">
@@ -60,11 +60,10 @@ function Nvb() {
                         <NavDropdown.Item onClick={()=>prodotti()}>Tutti i Prodotti</NavDropdown.Item>
                     </NavDropdown>
                     <Nav className="me-auto">
-                        <Nav.Link onClick={()=>carrello()} className='mx-1'><CiShoppingCart className='fs-4' /></Nav.Link>
+                        <Nav.Link onClick={()=>carrello()} className='mx-1'><CiShoppingCart className='fs-4 text-white' /></Nav.Link>
                     </Nav>
                     <NavDropdown title="Profilo" id="basic-nav-dropdown">
                         <NavDropdown.Item onClick={()=>profilo()}>I tuoi Dati</NavDropdown.Item>
-                        <NavDropdown.Item href="/ordini">I tuoi Ordini</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item onClick={Logout}>
                             LOGOUT

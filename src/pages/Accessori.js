@@ -51,12 +51,15 @@ const Accessori = () => {
         getProduct()
     }, [])
 
+    const tornaIndietro = () => {
+        history.go(-1); return true;
+    }
+
 
     return (
         <div className='sfondo2 sfondo'>
             <div className='sfondo'>
-                <Navbar />
-                <Container className="sfdctn pt-5">
+                <Container className="sfdctn pt-5 mt-5">
                     <Form onSubmit={filtraProdotti} className="mt-3">
                         <Row className="mb-3 mt-5">
                             <Form.Group className="d-flex" md="4">
@@ -82,6 +85,11 @@ const Accessori = () => {
                                 />
                             </Col>
                         ))}
+                    </Row>
+                    <Row className="mt-3">
+                        <Col className="d-flex justify-content-center mb-4">
+                            <button className="glow-on-hover" onClick={() => tornaIndietro()}>Torna Indietro</button>
+                        </Col>
                     </Row>
                 </Container>
                 <MyFooter />

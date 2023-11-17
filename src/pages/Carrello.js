@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Navbar from "../components/Navbar/Nvb"
 import MyFooter from "../components/Footer/MyFooter";
 import { CartContext } from "../App";
 import Container from "react-bootstrap/esm/Container";
@@ -13,6 +12,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/Stripe/CheckOutFrom";
 import "../components/Stripe/COF.css";
 import Modal from 'react-bootstrap/Modal';
+import { nanoid } from "nanoid"
 
 const stripePromise = loadStripe(process.env.REACT_APP_PUBLIC_KEY);
 
@@ -63,12 +63,11 @@ const Carrello = () => {
 
     return (
         <>
-            <Navbar />
             <Container className="mt-5 pt-5">
                 <Row className="mb-5">
                     <Col xxl="8" xl="8" lg="8" md="6" sm="12" className="d-flex flex-wrap">
                         {cart.map((p) => (
-                            <Card style={{ width: '18rem' }} className='mt-2 mx-3 mb-4 bg-black text-white card'>
+                            <Card style={{ width: '18rem' }} key={nanoid()} className='mt-2 mx-3 mb-4 bg-black text-white card'>
                                 <Card.Img variant="top" src={p.cover1} className='cardimg' />
                                 <Card.Body>
                                     <Card.Title>{p.nome}</Card.Title>

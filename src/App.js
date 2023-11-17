@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import LineaProtetta from "./middleware/LineaProtetta";
@@ -12,8 +12,9 @@ import Console from "./pages/Console";
 import Giochi from "./pages/Giochi";
 import Accessori from "./pages/Accessori";
 import Success from "./pages/Success";
-import Cancel from "./pages/Cancel";
 import Nvb from "./components/Navbar/Nvb";
+import ProdottiAmmi from "./PagesAmministrator/ProdottiAmmi";
+import FormProdu from "./PagesAmministrator/FormProdu"
 
 export const CartContext = createContext({})
 
@@ -41,7 +42,8 @@ function App() {
             <Route path="/giochi" element={<Giochi />} />
             <Route path="/accessori" element={<Accessori />} />
             <Route path="/success" element={<Success />} />
-            <Route path="/cancel" element={<Cancel />} />
+            <Route path="/prodottiammi" element={<ProdottiAmmi />} />
+            <Route path="/formprodu" element={<FormProdu />} />
           </Route>
         </Routes>
       </BrowserRouter>

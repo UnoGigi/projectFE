@@ -19,6 +19,20 @@
     max-height: 100%;
 }
 
+.homelink3 {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%, rgba(251,251,251,1) 100%);
+}
+
+.homelink1 {
+    background: rgb(255,30,30);
+    background: linear-gradient(90deg, rgba(255,30,30,1) 0%, rgba(0,176,255,1) 53%, rgba(0,255,38,1) 100%);
+}
+
+.homelink {
+    background: rgb(255,106,0);
+    background: linear-gradient(90deg, rgba(255,106,0,1) 0%, rgba(0,65,255,1) 50%, rgba(232,6,6,1) 100%);
+}
 
 .profiloimg {
     width: 100%;

@@ -22,7 +22,7 @@
   }
   
   /* Buttons and links */
-  button {
+  .btn {
     background: #5469d4;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -38,11 +38,11 @@
     width: 100%;
   }
   
-  button:hover {
+  .btn:hover {
     filter: contrast(115%);
   }
   
-  button:disabled {
+  .btn:disabled {
     opacity: 0.5;
     cursor: default;
   }

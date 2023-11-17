@@ -1,10 +1,12 @@
 .box1 {
     background: rgb(238, 238, 238);
-    box-shadow: 5px 5px 10px 2px #333333;
-    -webkit-box-shadow: 5px 5px 10px 2px #333333;
-    -moz-box-shadow: 5px 5px 10px 2px #333333;
+    box-shadow: 0 10px 10px 2px #333333;
 }
 
 .pointer:hover {
     cursor: pointer;
+}
+
+.bgnvb {
+    background: #666666;
 }

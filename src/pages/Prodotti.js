@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from '../components/Navbar/Nvb'
 import MyFooter from '../components/Footer/MyFooter'
 import "./home.css"
 import Container from "react-bootstrap/esm/Container";
@@ -14,7 +13,7 @@ import Col from 'react-bootstrap/esm/Col'
 
 const Prodotti = () => {
     //prendo i dati dei prodotti
-    
+
     const [product, setProduct] = useState([])
     console.log(product);
 
@@ -35,14 +34,14 @@ const Prodotti = () => {
         }
     }
 
-    
+
 
 
     useEffect(() => {
         getProduct()
     }, [])
 
-    
+
 
     const prendiDati = (value) => {
         if (value === "") {
@@ -63,11 +62,15 @@ const Prodotti = () => {
         setFilteredProduct(prodottiFiltrati)
     }
 
+    const tornaIndietro = () => {
+        history.go(-1); return true;
+    }
+
+
     return (
         <div className='sfondo2 sfondo'>
             <div className='sfondo'>
-                <Navbar />
-                <Container className="sfdctn pt-5">
+                <Container className="sfdctn pt-5 mt-5">
                     <Form onSubmit={filtraProdotti} className="mt-3">
                         <Row className="mb-3 mt-5">
                             <Form.Group className="d-flex" md="4">
@@ -94,6 +97,11 @@ const Prodotti = () => {
                                 />
                             </Col>
                         ))}
+                    </Row>
+                    <Row className="mt-3">
+                        <Col className="d-flex justify-content-center mb-4">
+                            <button className="glow-on-hover" onClick={() => tornaIndietro()}>Torna Indietro</button>
+                        </Col>
                     </Row>
                 </Container>
                 <MyFooter />

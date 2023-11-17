@@ -4,18 +4,19 @@ import { BiLogoInstagramAlt } from 'react-icons/bi';
 import { BiLogoTwitter } from 'react-icons/bi';
 import { BiLogoYoutube } from 'react-icons/bi';
 import { BsFacebook } from 'react-icons/bs';
+import { useSession } from '../../middleware/LineaProtetta'
 
 const MyFooter = () => {
+
   return (
     <>
       <footer>
         <div class="container">
           <div class="row">
             <div class="col-12 mx-5 mt-4">
-              <a href="#"><BiLogoInstagramAlt className='ion-icon'/></a>
-              <a href="#"><BsFacebook className='ion-icon'/></a>
-              <a href="#"><BiLogoTwitter className='ion-icon'/></a>
-              <a href="#"><BiLogoYoutube className='ion-icon'/></a>
+              <a href="https://www.instagram.com/"><BiLogoInstagramAlt className='ion-icon'/></a>
+              <a href="https://it-it.facebook.com/"><BsFacebook className='ion-icon'/></a>
+              <a href="https://twitter.com/"><BiLogoTwitter className='ion-icon'/></a>
             </div>
           </div>
           <div class="row ftrrow">

@@ -9,7 +9,7 @@ import Alert from 'react-bootstrap/Alert';
 const Registrati = () => {
     const [file, setFile] = useState(null)
     const [formData, setFormData] = useState({})
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
 
     console.log(formData)
 
@@ -32,14 +32,9 @@ const Registrati = () => {
         }
     }
 
-    const vediAlert = () => {
-        setShow(!show)
-    }
-
     const onSubmit = async (e) => {
         e.preventDefault()
 
-        if (file) {
             try {
                 const uploadCover = await uploadFile(file)
                 const finalBody = {
@@ -58,14 +53,14 @@ const Registrati = () => {
                 return response.json()
             } catch (error) {
                 console.log(error);
-            }
-        } else {
-            console.error("Inserisci un'immagine");
-        }
-        alert("Registrazion effettuata con successo")
+            } 
     }
 
     const navigate = useNavigate()
+
+    const aprimodal = () => {
+        setShow(!show)
+    }
 
     const tornaLogin = () => {
         navigate('/')
@@ -186,8 +181,8 @@ const Registrati = () => {
                             />
                         </Form.Group>
                     </Row>
-                    <button type="submit" className="glow-on-hover mt-3 frm" onClick={() => vediAlert()}>Registrati</button>
-                    <button onClick={() => tornaLogin()} className="glow-on-hover mt-4 frm">Trona alla Login</button>
+                    <button type="submit" className="glow-on-hover mt-3 frm" onClick={aprimodal}>Registrati</button>
+                    <button onClick={() => tornaLogin()} className="glow-on-hover mt-4 frm">Torna alla Login</button>
                 </Form>
             </Container>
         </div>

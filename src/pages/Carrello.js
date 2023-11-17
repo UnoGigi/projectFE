@@ -48,6 +48,7 @@ const Carrello = () => {
     //setto il pagamento
 
     const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLIC_KEY}`);
+    
     const [clientSecret, setClientSecret] = useState("");
     console.log("client", clientSecret);
     useEffect(() => {

@@ -47,6 +47,7 @@ const Carrello = () => {
 
     //setto il pagamento
     const [clientSecret, setClientSecret] = useState("");
+    console.log("client", clientSecret);
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {

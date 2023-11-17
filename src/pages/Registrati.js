@@ -4,12 +4,10 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from "react-bootstrap/esm/Container";
 import './login.css'
-import Alert from 'react-bootstrap/Alert';
 
 const Registrati = () => {
     const [file, setFile] = useState(null)
     const [formData, setFormData] = useState({})
-    const [show, setShow] = useState(false)
 
     console.log(formData)
 
@@ -58,9 +56,6 @@ const Registrati = () => {
 
     const navigate = useNavigate()
 
-    const aprimodal = () => {
-        setShow(!show)
-    }
 
     const tornaLogin = () => {
         navigate('/')
@@ -69,9 +64,6 @@ const Registrati = () => {
     return (
         <div className="ctn-form">
             <Container className="pt-3 pb-5 d-flex flex-column align-items-center text-white">
-                <Alert show={show} variant="success" dismissible className="mt-5 pt-5 h-25 position-absolute top-50 start-25 d-flex  align-items-center">
-                    <Alert.Heading className="fs-2">Registrazione Effettuata con Successo</Alert.Heading>
-                </Alert>
                 <h1 className="mb-3">L'OASI DEL GIOCATORE</h1>
                 <Form
                     onSubmit={onSubmit}

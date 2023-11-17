@@ -56,12 +56,6 @@ const Dettagli = () => {
     }
 
 
-
-    //bottone indietro
-    const tornaIndietro = () => {
-        history.go(-1); return true;
-    }
-
     return (
         <div>
             <Container className="pt-5 mt-5">
@@ -108,11 +102,6 @@ const Dettagli = () => {
                                     <Image src={product.cover3} className="w-100" />}
                             </Carousel.Item>
                         </Carousel>
-                    </Col>
-                </Row>
-                <Row className="mt-3">
-                    <Col className="d-flex justify-content-center mb-4">
-                        <button className="glow-on-hover" onClick={() => tornaIndietro()}>Torna Indietro</button>
                     </Col>
                 </Row>
             </Container>

@@ -29,7 +29,7 @@ const Profilo = () => {
     }
 
     useEffect(() => {
-        getUtente(), goAmmi()
+        getUtente()
     }, [])
 
     const Modifica = async (utentId) => {
@@ -63,6 +63,11 @@ const Profilo = () => {
     const FormProdu = () => {
         navigate('/formprodu')
     }
+
+    useEffect(() => {
+        goAmmi()
+    }, [])
+    
 
 
     return (

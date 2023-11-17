@@ -50,11 +50,7 @@ const Giochi = () => {
         getProduct()
     }, [])
 
-    const tornaIndietro = () => {
-        history.go(-1); return true;
-    }
-
-
+    
     return (
         <div className='sfondo2 sfondo'>
             <div className='sfondo'>
@@ -84,11 +80,6 @@ const Giochi = () => {
                                 />
                             </Col>
                         ))}
-                    </Row>
-                    <Row className="mt-3">
-                        <Col className="d-flex justify-content-center mb-4">
-                            <button className="glow-on-hover" onClick={() => tornaIndietro()}>Torna Indietro</button>
-                        </Col>
                     </Row>
                 </Container>
                 <MyFooter />

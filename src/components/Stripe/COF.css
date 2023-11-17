@@ -22,7 +22,7 @@
   }
   
   /* Buttons and links */
-  .btn {
+  #submit {
     background: #5469d4;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -38,11 +38,11 @@
     width: 100%;
   }
   
-  .btn:hover {
+  #submit:hover {
     filter: contrast(115%);
   }
   
-  .btn:disabled {
+  #submit:disabled {
     opacity: 0.5;
     cursor: default;
   }

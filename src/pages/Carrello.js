@@ -39,6 +39,11 @@ const Carrello = () => {
         setShowItems(!showItem)}
     }
 
+    const deleteProduct = (id) => {
+        const newList = cart.filter((item) => item._id !== id)
+        setCart(newList)   
+    }
+
 
     //setto il pagamento
     const [clientSecret, setClientSecret] = useState("");
@@ -47,7 +52,7 @@ const Carrello = () => {
         fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+            body: JSON.stringify({ items: [{ id: "prodotti" }] }),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
@@ -66,7 +71,7 @@ const Carrello = () => {
             <Container className="mt-5 pt-5">
                 <Row className="mb-5">
                     <Col xxl="8" xl="8" lg="8" md="6" sm="12" className="d-flex flex-wrap">
-                        {cart.map((p) => (
+                        {cart && cart?.map((p) => (
                             <Card style={{ width: '18rem' }} key={nanoid()} className='mt-2 mx-3 mb-4 bg-black text-white card'>
                                 <Card.Img variant="top" src={p.cover1} className='cardimg' />
                                 <Card.Body>
@@ -76,7 +81,7 @@ const Carrello = () => {
                                     <ListGroup.Item className='bg-black text-white'>{p.prezzo}$</ListGroup.Item>
                                     <ListGroup.Item className='bg-black text-white'>quantità: {p.quantity}</ListGroup.Item>
                                 </ListGroup>
-                                <button className='glow-on-hover text-decoration-none mt-3 mb-2 d-flex justify-content-center align-self-center align-items-center'>Rimuovi dal Carrello</button>
+                                <button className='glow-on-hover text-decoration-none mt-3 mb-2 d-flex justify-content-center align-self-center align-items-center' onClick={() => deleteProduct(p._id)}>Rimuovi dal Carrello</button>
                             </Card>
                         ))}
                     </Col>

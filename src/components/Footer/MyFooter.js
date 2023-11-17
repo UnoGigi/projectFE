@@ -2,9 +2,7 @@ import React from 'react'
 import './footer.css'
 import { BiLogoInstagramAlt } from 'react-icons/bi';
 import { BiLogoTwitter } from 'react-icons/bi';
-import { BiLogoYoutube } from 'react-icons/bi';
 import { BsFacebook } from 'react-icons/bs';
-import { useSession } from '../../middleware/LineaProtetta'
 
 const MyFooter = () => {
 

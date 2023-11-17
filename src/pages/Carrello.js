@@ -14,7 +14,7 @@ import "../components/Stripe/COF.css";
 import Modal from 'react-bootstrap/Modal';
 import { nanoid } from "nanoid"
 
-const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLIC_KEY}`);
+
 
 
 const Carrello = () => {
@@ -46,6 +46,8 @@ const Carrello = () => {
 
 
     //setto il pagamento
+
+    const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLIC_KEY}`);
     const [clientSecret, setClientSecret] = useState("");
     console.log("client", clientSecret);
     useEffect(() => {

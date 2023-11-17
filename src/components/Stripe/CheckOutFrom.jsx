@@ -34,7 +34,7 @@ export default function CheckoutForm() {
     })
 
     const { client_secret: clientSecret } = await res.json()
-
+    console.log(clientSecret);
     if (!stripe || !elements) {
       return;
     }

@@ -173,7 +173,7 @@ const Registrati = () => {
                             />
                         </Form.Group>
                     </Row>
-                    <button type="submit" className="glow-on-hover mt-3 frm" onClick={aprimodal}>Registrati</button>
+                    <button type="submit" className="glow-on-hover mt-3 frm">Registrati</button>
                     <button onClick={() => tornaLogin()} className="glow-on-hover mt-4 frm">Torna alla Login</button>
                 </Form>
             </Container>

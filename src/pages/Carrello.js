@@ -39,11 +39,6 @@ const Carrello = () => {
         setShowItems(!showItem)}
     }
 
-    const deleteProduct = (id) => {
-        const newList = cart.filter((item) => item._id !== id)
-        setCart(newList)   
-    }
-
 
     //setto il pagamento
 
@@ -85,7 +80,6 @@ const Carrello = () => {
                                     <ListGroup.Item className='bg-black text-white'>{p.prezzo}$</ListGroup.Item>
                                     <ListGroup.Item className='bg-black text-white'>quantità: {p.quantity}</ListGroup.Item>
                                 </ListGroup>
-                                <button className='glow-on-hover text-decoration-none mt-3 mb-2 d-flex justify-content-center align-self-center align-items-center' onClick={() => deleteProduct(p._id)}>Rimuovi dal Carrello</button>
                             </Card>
                         ))}
                     </Col>

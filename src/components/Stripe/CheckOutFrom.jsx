@@ -29,7 +29,10 @@ export default function CheckoutForm() {
   
 
     const res = await fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {
-      method: 'POST'
+      method: 'POST',
+      headers: {
+        "Authorization" : clientSecret
+      }
     })
 
     const { client_secret: clientSecret } = await res.json()

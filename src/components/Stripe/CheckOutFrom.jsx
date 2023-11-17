@@ -14,40 +14,25 @@ export default function CheckoutForm() {
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (!stripe) {
-      return;
-    }
-
-    const clientSecret = new URLSearchParams(window.location.search).get(
-      "payment_intent_client_secret"
-    );
-    console.log("secret", clientSecret);
-
-    if (!clientSecret) {
-      return;
-    }
-
-    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-      switch (paymentIntent.status) {
-        case "succeeded":
-          setMessage("Payment succeeded!");
-          break;
-        case "processing":
-          setMessage("Your payment is processing.");
-          break;
-        case "requires_payment_method":
-          setMessage("Your payment was not successful, please try again.");
-          break;
-        default:
-          setMessage("Something went wrong.");
-          break;
-      }
-    });
-  }, [stripe]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (elements == null) {
+      return;
+    }
+
+    const {error: submitError} = await elements.submit()
+    if(submitError) {
+      setMessage(submitError.message)
+      return;
+    }
+  
+
+    const res = await fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {
+      method: 'POST'
+    })
+
+    const { client_secret: clientSecret } = await res.json()
 
     if (!stripe || !elements) {
       return;
@@ -57,6 +42,7 @@ export default function CheckoutForm() {
 
     const { error } = await stripe.confirmPayment({
       elements,
+      clientSecret,
       confirmParams: {
         return_url: `${process.env.REACT_APP_URL}/success`,
       },

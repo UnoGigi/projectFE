@@ -5,6 +5,7 @@ import {
   useElements
 } from "@stripe/react-stripe-js";
 import './COF.css'
+import { loadStripe } from "@stripe/stripe-js";
 
 export default function CheckoutForm() {
   const stripe = useStripe();

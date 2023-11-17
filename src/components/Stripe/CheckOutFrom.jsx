@@ -28,12 +28,13 @@ export default function CheckoutForm() {
       return;
     }
   
-
+    
     const res = await fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {
       method: 'POST'
     })
 
-    const { client_secret: clientSecret } = await res.json()
+    const { client_secret : clientSecret } = await res.json()
+    
     console.log(clientSecret);
     if (!stripe || !elements) {
       return;

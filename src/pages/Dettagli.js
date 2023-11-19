@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Navbar from '../components/Navbar/Nvb'
 import './home.css'
 import { useParams } from "react-router-dom";
 import axios from "axios"
@@ -8,10 +7,13 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from 'react-bootstrap/esm/Col'
 import Image from 'react-bootstrap/Image';
-import { CartContext } from "../App";
+import { CartContext } from "../components/Context/CartContext";
+
 
 
 const Dettagli = () => {
+
+    const { addToCart } = useContext(CartContext);
 
     //fetch prodotto
     const [product, setProduct] = useState(null)
@@ -30,31 +32,9 @@ const Dettagli = () => {
         getProduct()
     }, [productId])
 
-
-    //carrello
-
-    const { cartItems, setCartItems } = useContext(CartContext)
-    console.log(cartItems);
-
-
-
-    const addToCart = async () => {
-
-        setCartItems(
-            [
-                ...cartItems,
-                {
-                    id: product._id,
-                    nome: product.nome,
-                    cover1: product.cover1,
-                    prezzo: product.prezzo,
-                    quantity: 1
-                }
-            ]
-        )
-        alert("prodotto aggiunto al carrello")
-    }
-
+    const handleAddToCart = (product) => {
+		addToCart(product);
+	};
 
     return (
         <div>
@@ -75,7 +55,7 @@ const Dettagli = () => {
                         {product &&
                             <p className="fs-2">{product.prezzo} $</p>
                         }
-                        <button className="glow-on-hover" onClick={addToCart}>Aggiungi al Carrello</button>
+                        <button className="glow-on-hover" onClick={() => handleAddToCart(product)}>Aggiungi al Carrello</button>
                     </Col>
                 </Row>
                 <Row className="mt-3 pb-5 mb-5 border-bottom border-grey">

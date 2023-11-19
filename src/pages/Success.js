@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import Container from "react-bootstrap/esm/Container";
+import { CartContext } from "../components/Context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 
+function Completion() {
+
+    
+    const { cartItems, clearCart } = useContext(CartContext);
+    const navigate = useNavigate();
 
 
+    useEffect(() => {
+        clearCart();
+    
+        setTimeout(() => {
+            navigate(`/home`);
+        }, 1500);
+    }, [cartItems]);
 
-function Completion(props) {
     return (
         <>
             <Container className="d-flex flex-column align-items-center mt-5 pt-5">

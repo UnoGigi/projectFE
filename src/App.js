@@ -15,17 +15,16 @@ import Success from "./pages/Success";
 import Nvb from "./components/Navbar/Nvb";
 import ProdottiAmmi from "./PagesAmministrator/ProdottiAmmi";
 import FormProdu from "./PagesAmministrator/FormProdu"
+import { CartProvider } from "./components/Context/CartContext";
 
-export const CartContext = createContext({})
+
 
 
 function App() {
 
-  const [cartItems, setCartItems] = useState([])
-
 
   return (
-    <CartContext.Provider value={{cartItems, setCartItems}}>
+    <CartProvider>
       <BrowserRouter>
         <Nvb />
         <Routes>
@@ -47,7 +46,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 

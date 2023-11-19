@@ -14,7 +14,7 @@ import Modal from 'react-bootstrap/Modal';
 import { CartContext } from "../components/Context/CartContext";
 
 
-const stripePromise = loadStripe(`${process.env.REACT_APP_SECRET_KEY}`);
+const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_SECRET_KEY}`);
 
 const Carrello = () => {
     const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } =
@@ -72,12 +72,6 @@ const Carrello = () => {
                                 </ListGroup>
                                 <ListGroup className="list-group-flush border-white d-flex flex-column align-items-center">
                                     <button
-                                        className="glow-on-hover text-decoration-none mt-3"
-                                        onClick={() => {
-                                            removeFromCart(p);
-                                        }}
-                                    >-</button>
-                                    <button
                                         className="glow-on-hover text-decoration-none mt-3 mb-2"
                                         onClick={() => {
                                             addToCart(p);
@@ -85,6 +79,12 @@ const Carrello = () => {
                                     >
                                         +
                                     </button>
+                                    <button
+                                        className="glow-on-hover text-decoration-none mt-1 mb-2"
+                                        onClick={() => {
+                                            removeFromCart(p);
+                                        }}
+                                    >-</button>
                                 </ListGroup>
                             </Card>
                         ))}

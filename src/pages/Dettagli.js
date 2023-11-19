@@ -40,7 +40,7 @@ const Dettagli = () => {
     return (
         <div>
             <Container className="pt-5 mt-5">
-                <Row className="mt-5">
+                <Row>
                     <Col className="mt-5 pt-5 border-bottom border-grey">
                         {product &&
                             <h2>{product.nome}</h2>}

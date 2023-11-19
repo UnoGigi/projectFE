@@ -32,7 +32,7 @@ const ProdottiAmmi = () => {
             headers: {
               "Content-Type": "application/json"
             }
-          }
+          },window.location.reload()
           )
           
         } catch (error) {

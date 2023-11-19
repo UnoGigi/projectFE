@@ -11,20 +11,17 @@ function Completion() {
     const navigate = useNavigate();
 
 
-    const tornaHome = () => {
+    useEffect(() => {
         clearCart()
-        navigate('/home')
-    }
+    }, [])
+        
+        
 
     return (
         <>
             <Container className="d-flex flex-column align-items-center mt-5 pt-5">
                 <h1>PAGAMENTO EFFETTUATO CON SUCCESSO</h1>
                 <h1> GRAZIE PER IL TUO ORDINE! 🎉</h1>
-                <button
-                    className="glow-on-hover text-decoration-none mt-3"
-                    onClick={tornaHome()}
-                >TORNA ALLA HOMEPAGE</button>
             </Container>
         </>
     )

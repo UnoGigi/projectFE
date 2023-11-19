@@ -34,6 +34,7 @@ const Dettagli = () => {
 
     const handleAddToCart = (product) => {
 		addToCart(product);
+        alert("Hai aggiunto il prodotto al carrello")
 	};
 
     return (

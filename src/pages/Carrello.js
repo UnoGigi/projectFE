@@ -15,13 +15,39 @@ import Modal from 'react-bootstrap/Modal';
 import { nanoid } from "nanoid"
 
 
-const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLIC_KEY}`);
+const stripePromise = loadStripe(`${process.env.REACT_APP_SECRET_KEY}`);
 
 const Carrello = () => {
     const { cartItems, setCartItems } = useContext(CartContext)
     const [cart, setCart] = useState(cartItems)
     const [totale, setTotale] = useState(0)
     const [showItem, setShowItems] = useState(false)
+
+
+    //setto il pagamento
+
+    
+    const [clientSecret, setClientSecret] = useState("");
+
+    
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ cart }),
+        })
+            .then((res) => res.json())
+            .then((data) => setClientSecret(data.clientSecret));
+    }, []);
+
+    const appearance = {
+        theme: 'stripe',
+    };
+    const options = {
+        clientSecret,
+        appearance,
+    };
+
 
 
     const sum = () => {
@@ -39,30 +65,6 @@ const Carrello = () => {
         setShowItems(!showItem)}
     }
 
-
-    //setto il pagamento
-
-    
-    const [clientSecret, setClientSecret] = useState("");
-    console.log("client", clientSecret);
-    useEffect(() => {
-        // Create PaymentIntent as soon as the page loads
-        fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ cart }),
-        })
-            .then((res) => res.json())
-            .then((data) => setClientSecret(data.clientSecret));
-    }, []);
-
-    const appearance = {
-        theme: 'stripe',
-    };
-    const options = {
-        clientSecret,
-        appearance,
-    };
 
     return (
         <>

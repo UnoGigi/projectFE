@@ -15,7 +15,7 @@ import Modal from 'react-bootstrap/Modal';
 import { nanoid } from "nanoid"
 
 
-
+const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLIC_KEY}`);
 
 const Carrello = () => {
     const { cartItems, setCartItems } = useContext(CartContext)
@@ -42,7 +42,6 @@ const Carrello = () => {
 
     //setto il pagamento
 
-    const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLIC_KEY}`);
     
     const [clientSecret, setClientSecret] = useState("");
     console.log("client", clientSecret);
@@ -51,7 +50,7 @@ const Carrello = () => {
         fetch(`${process.env.REACT_APP_URL}/create-payment-intent`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+            body: JSON.stringify({ cart }),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
